@@ -7,9 +7,8 @@ cd 2048-game
 REM Создаем Dockerfile
 echo FROM nginx:alpine > Dockerfile
 echo WORKDIR /usr/share/nginx/html >> Dockerfile
-echo COPY . . >> Dockerfile
+echo COPY data.txt game.js highscore.js index.html server.js style.css ./ >> Dockerfile
 echo EXPOSE 80 >> Dockerfile
-echo EXPOSE 30 >> Dockerfile
 echo CMD ["nginx", "-g", "daemon off;"] >> Dockerfile
 
 REM Сборка Docker-образа
